@@ -1,7 +1,6 @@
 const inputArea = document.getElementById("search");
 const searchBtn = document.querySelector(".search-btn");
 const finalTextArea = document.querySelector(".final-text");
-const allUsersArray = [];
 
 var index = elasticlunr(function () {
     this.addField('fullname');
@@ -115,14 +114,18 @@ index.addDoc(doc2);
 searchBtn.addEventListener("click", searchIt);
 
 function searchIt() {
-    let individualUserArray =[];
+    let individualUserArray = [];
+    let allUsersArray = [];
+
     const searchStr = inputArea.value;
     const matchArr = index.search(searchStr);  // here's the result
     console.log(matchArr);
-    for ( let i = 0; i < matchArr.length; i++ ) {
-        individualUserArray.push( { Name: matchArr[i].doc.fullname } )
-        individualUserArray.push( { Profile: matchArr[i].doc.profileUrl } )
-    };
+        for ( let g = 0; g < matchArr.length; g++) {
+            individualUserArray.push( { Name: matchArr[g].doc.fullname } )
+            individualUserArray.push( { Profile: matchArr[g].doc.profileUrl } )
+            allUsersArray.push(individualUserArray);
+            individualUserArray = [];
+        }
     console.log(allUsersArray);
-    finalTextArea.innerText = JSON.stringify(individualUserArray);  // too lazy to style the result ;P
+    finalTextArea.innerText = JSON.stringify(allUsersArray);  // too lazy to style the result ;P
 }
