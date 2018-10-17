@@ -3,22 +3,82 @@ const searchBtn = document.querySelector(".search-btn");
 const finalTextArea = document.querySelector(".final-text");
 
 var index = elasticlunr(function () {
-    this.addField('title');
-    this.addField('body');
+    this.addField('fullname');
+    this.addField('email');
+    this.addField('keywords');
     this.setRef('id');
 });
 
 // you can grab the data from frontend, but I'm too lazy to do that
 var doc1 = {
     "id": 1,
-    "title": "Oracle released its latest database Oracle 12g",
-    "body": "Yesterday Oracle has released its new database Oracle 12g, this would make more money for this company and lead to a nice profit report of annual year."
+    "fullname": "Ricky Ng-Adam",
+    "email": "rngadam@coderbunker.com",
+    "keywords": [
+        "China",
+        "@coderbunker.com",
+        "Coderbunker rngadam",
+        "Specialties",
+        "Javascript",
+        "software development",
+        "experience",
+        "testing Architecture",
+        "PostgreSQL",
+        "design",
+        "R&D",
+        "engineering team recruitment",
+        "building",
+        "shell",
+        "React",
+        "Python",
+        "C/C++",
+        "deployment",
+        "REST",
+        "Websockets",
+        "GraphQL",
+        "API servers",
+        "Linux",
+        "Ansible",
+        "MVC"
+    ],
 }
 
 var doc2 = {
     "id": 2,
-    "title": "Oracle released its profit report of 2015",
-    "body": "As expected, Oracle released its profit report of 2015, during the good sales of database and hardware, Oracle's profit of 2015 reached 12.5 Billion."
+    "fullname": "Peter Bray",
+    "email": "peter@foxandgeese.com",
+    "keywords": [
+        "Product Management",
+        "Software Architecture",
+        "peter@foxandgeese.com",
+        "Products",
+        "China",
+        "gifting",
+        "loyalty",
+        "project management",
+        "product",
+        "stars",
+        "plan",
+        "apps",
+        "payment",
+        "marketing automation",
+        "Starbucks",
+        "alignment",
+        "WeChat",
+        "microservices",
+        "team management",
+        "Grew SBUX iOS",
+        "Android",
+        "planning",
+        "Specialties",
+        "non-SQL",
+        "initiatives",
+        "cloud strategy",
+        "AWS",
+        "serverless",
+        "CD",
+        "CI"
+    ],
 }
 
 index.addDoc(doc1);
