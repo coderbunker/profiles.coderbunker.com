@@ -104,7 +104,6 @@ let membersArray = [
       "profileUrl": "https://drive.google.com/uc?id=1z8dlUGiFBzhLIx__e2_kprshOXtz-BWh"
   },
   {
-    //   "id": 3,
       "fullname": "Frederic Bazin",
       "altnames": [
           "Fred"
@@ -133,7 +132,7 @@ let membersArray = [
       "profileUrl": "https://drive.google.com/uc?id=1rmpjrGCo1yW65CpdKBmdx01LIiEqi7EQ"
   }
 ]
-//
+
 
 
 
