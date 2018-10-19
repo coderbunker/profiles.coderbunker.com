@@ -147,20 +147,39 @@ for(let i = 0; i < membersArray.length; i++) {
 console.log(index)
 
 searchBtn.addEventListener("click", searchIt);
+inputArea.addEventListener("keyup", function(e) {
+    if (e.keyCode === 13) {
+        searchIt();
+    }
+});
 
 function searchIt() {
-    let individualUserArray = [];
+    $('.searchResult').remove();
+    let htmlText = '';
+    let individualUser = {
+        'name': '',
+        'profile': '',
+    };
     let allUsersArray = [];
 
     const searchStr = inputArea.value;
     const matchArr = index.search(searchStr);  // here's the result
     console.log(matchArr);
         for ( let g = 0; g < matchArr.length; g++) {
-            individualUserArray.push( { Name: matchArr[g].doc.fullname } )
-            individualUserArray.push( { Profile: matchArr[g].doc.profileUrl } )
-            allUsersArray.push(individualUserArray);
-            individualUserArray = [];
+            individualUser.name = matchArr[g].doc.fullname
+            individualUser.profile = matchArr[g].doc.profileUrl
+            allUsersArray.push(individualUser);
+            individualUser = {};
         }
-    console.log(allUsersArray);
-    finalTextArea.innerText = JSON.stringify(allUsersArray);  // too lazy to style the result ;P
+
+        for ( var key in allUsersArray ) {
+            htmlText += '<div class="searchResult">';
+            htmlText += '<p class="profileName"> Name: ' + allUsersArray[key].name + '</p>';
+            htmlText += '<p class="profileLink"> Profile: ' + allUsersArray[key].profile + '</p>';
+            htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
+            htmlText += '</div>';
+        }
+
+         $("body").append(htmlText);   
+    // finalTextArea.innerText = JSON.stringify(allUsersArray);  // too lazy to style the result ;P
 }
