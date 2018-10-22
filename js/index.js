@@ -415,13 +415,19 @@ function searchIt() {
         individualUser = {};
     }
 
-    for ( var key in allUsersArray ) {
-            htmlText += '<div class="searchResult">';
-            htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
-            // htmlText += '<p class="profileLink"> Profile: ' + allUsersArray[key].profile + '</p>';
-            htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
-            htmlText += '</div>';
-        
+    if (allUsersArray.length == 0) {
+        htmlText += '<div class="searchResult">';
+        htmlText += '<p class="profileName"> Sorry, no users match this search term. </p>';
+        htmlText += '</div>';
+    } else {
+        for ( var key in allUsersArray ) {
+                htmlText += '<div class="searchResult">';
+                htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
+                // htmlText += '<p class="profileLink"> Profile: ' + allUsersArray[key].profile + '</p>';
+                htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
+                htmlText += '</div>';
+            
+        }
     }
 
         $(".search-results-area").append(htmlText);   
