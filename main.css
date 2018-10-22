@@ -1,4 +1,45 @@
+body {
+  font-family: "bebas neue", bebas, helvetica, 'PingFang SC',"Microsoft YaHei","微软雅黑",STXihei,"华文细黑", sans-serif;
+  background-color: #ECF0F1;
+  color: #50555c;
+}
+
+/* .search-results-area {
+  display: inline-flex;
+  align: center;
+  background-color: red;
+} */
+
 .profileImg {
-  width: 600px;
-  height: 600px;
+  border: 2px solid black;
+  display: block;
+  max-width:518px;
+  max-height:215px;
+  width: auto;
+  height: auto;
+}
+
+.searchResult {
+  display: inline-flex;
+  flex-direction: column;
+  align-content: space-between;
+  font-weight: bold;
+  border-bottom: 1px solid #50555c;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.search-area {
+  text-align: center;
+  color: #50555c;
+}
+
+.search-btn {
+  background:#0099ff;
+  font-weight: bold;
+}
+
+.search-field {
+  background: #eee;
 }
