@@ -416,12 +416,13 @@ function searchIt() {
     }
 
     for ( var key in allUsersArray ) {
-        htmlText += '<div class="searchResult">';
-        htmlText += '<p class="profileName"> Name: ' + allUsersArray[key].name + '</p>';
-        htmlText += '<p class="profileLink"> Profile: ' + allUsersArray[key].profile + '</p>';
-        htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
-        htmlText += '</div>';
+            htmlText += '<div class="searchResult">';
+            htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
+            // htmlText += '<p class="profileLink"> Profile: ' + allUsersArray[key].profile + '</p>';
+            htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
+            htmlText += '</div>';
+        
     }
 
-        $("body").append(htmlText);   
+        $(".search-results-area").append(htmlText);   
 }
