@@ -10,11 +10,9 @@ let APIEndPoint = "";
 request.onload = () => {
     respObj = JSON.parse(request.responseText);
     APIEndPoint = respObj[0].APIAddress;
-    console.log(APIEndPoint + ' Hello');
     $.get( APIEndPoint, function( userJsonData ) {
         membersArray = userJsonData;
         for(let i = 0; i < membersArray.length; i++) {
-            console.log(JSON.stringify(membersArray[i]));
             index.addDoc(membersArray[i]);
         }
     });
@@ -22,16 +20,6 @@ request.onload = () => {
 
 request.open('GET', 'config.json', true);
 request.send();
-
-// $.get( APIEndPoint, function( userJsonData ) {
-//     membersArray = userJsonData;
-//     for(let i = 0; i < membersArray.length; i++) {
-//         // console.log(JSON.stringify(membersArray[i]));
-//         index.addDoc(membersArray[i]);
-//     }
-// });
-
-
 
 var index = elasticlunr(function () {
     this.addField('fullname');
@@ -41,8 +29,6 @@ var index = elasticlunr(function () {
     this.addField('profileUrl');
     this.setRef('objectId');
 });
-
-// console.log(index)
 
 searchBtn.addEventListener("click", searchIt);
 inputArea.addEventListener("keyup", function(e) {
@@ -62,7 +48,6 @@ function searchIt() {
 
     const searchStr = inputArea.value;
     const matchArr = index.search(searchStr);  // here's the result
-    console.log(matchArr);
     for ( let g = 0; g < matchArr.length; g++) {
         individualUser.name = matchArr[g].doc.fullname
         individualUser.profile = matchArr[g].doc.profileUrl
