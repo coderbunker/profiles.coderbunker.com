@@ -10,8 +10,12 @@ body {
   background-color: red;
 } */
 
+.search-section {
+  display: none;
+}
+
 .profileImg {
-  border: 2px solid black;
+  border: 2px solid #50555c;
   display: block;
   max-width:518px;
   max-height:215px;
@@ -24,9 +28,10 @@ body {
   flex-direction: column;
   align-content: space-between;
   font-weight: bold;
-  border-bottom: 1px solid #50555c;
-  padding-bottom: 5px;
-  padding-right: 5px;
+  /* border-bottom: 1px solid #50555c; */
+  padding: 10px 5px 10px 5px;
+  /* padding-bottom: 20px;
+  padding-right: 5px; */
   text-align: center;
 }
 
