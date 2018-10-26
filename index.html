@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="506629387301-hj12gdp6qdsf3ptnpjhg6vlvhedeenh9.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,15 +11,17 @@
     <title>Test Elasticlunr</title>
 </head>
 <body>
-    <div class="search-area">
-        <h2>#CODERBUNKER MEMBER SEARCH</h2>
-        <input class="search-field" id="search" name="search" />
-        <button class="search-btn">Search</button>
-    </div>
-
-    <div class="search-results-area"></div>
-
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div class="search-section">
+        <div class="search-area">
+            <h2>#CODERBUNKER MEMBER SEARCH</h2>
+            <input class="search-field" id="search" name="search" />
+            <button class="search-btn">Search</button>
+        </div>
+        <div class="search-results-area"></div>
+    </div>  
     <script src="libs/elasticlunr.min.js"></script>
+    <script type="text/javascript" src="config.json"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="js/index.js"></script>
 </body>
