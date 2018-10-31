@@ -7,25 +7,6 @@ let membersArray = [];
 let request = new XMLHttpRequest();
 let APIEndPoint = "";
 
-// function onSignIn(googleUser) {
-//     var profile = googleUser.getBasicProfile();
-//     console.log('Full Name: ' + profile.getName());
-//     console.log('is onSignIn running?');
-//     $('g-signin2').css('display', 'none');
-//     $('search-section').css('display', 'block');
-// };
-
-$(function() {
-    console.log( "ready!" );
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('Full Name: ' + profile.getName());
-        console.log('is onSignIn running?');
-        $('g-signin2').css('display', 'none');
-        $('search-section').css('display', 'block');
-    };
-});
-
 request.onload = () => {
     respObj = JSON.parse(request.responseText);
     APIEndPoint = respObj[0].APIAddress;
