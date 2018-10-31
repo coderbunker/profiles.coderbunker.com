@@ -27,6 +27,7 @@ var index = elasticlunr(function () {
     this.addField('keywords');
     this.addField('slideUrl');
     this.addField('profileUrl');
+    this.addField('status');
     this.setRef('objectId');
 });
 
