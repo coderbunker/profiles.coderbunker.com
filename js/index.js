@@ -43,16 +43,16 @@ function searchIt() {
         'name': '',
         'profile': '',
     };
-    let allUsersArray = [];
 
     const searchStr = inputArea.value;
     const matchArr = index.search(searchStr);
-    for ( let g = 0; g < matchArr.length; g++) {
-        individualUser.name = matchArr[g].doc.fullname
-        individualUser.profile = matchArr[g].doc.profileUrl
-        allUsersArray.push(individualUser);
-        individualUser = {};
-    }
+
+    const allUsersArray = matchArr.map( match => {
+        return {
+          name: match.doc.fullname,
+          profile: match.doc.profileUrl
+        }
+      })
 
     if (allUsersArray.length == 0) {
         htmlText += '<div class="searchResult">';
