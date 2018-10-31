@@ -25,8 +25,6 @@ var index = elasticlunr(function () {
     this.addField('fullname');
     this.addField('email');
     this.addField('keywords');
-    this.addField('slideUrl');
-    this.addField('profileUrl');
     this.addField('status');
     this.setRef('objectId');
 });
@@ -48,7 +46,7 @@ function searchIt() {
     let allUsersArray = [];
 
     const searchStr = inputArea.value;
-    const matchArr = index.search(searchStr);  // here's the result
+    const matchArr = index.search(searchStr);
     for ( let g = 0; g < matchArr.length; g++) {
         individualUser.name = matchArr[g].doc.fullname
         individualUser.profile = matchArr[g].doc.profileUrl
@@ -64,7 +62,6 @@ function searchIt() {
         for ( var key in allUsersArray ) {
                 htmlText += '<div class="searchResult">';
                 htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
-                // htmlText += '<p class="profileLink"> Profile: ' + allUsersArray[key].profile + '</p>';
                 htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
                 htmlText += '</div>';
             
