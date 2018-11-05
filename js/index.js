@@ -39,10 +39,6 @@ inputArea.addEventListener("keyup", function(e) {
 function searchIt() {
     $('.searchResult').remove();
     let htmlText = '';
-    // let allUsersArray = {
-    //     'name': '',
-    //     // 'profile': '',
-    // };
 
     const searchStr = inputArea.value;
     const matchArr = index.search(searchStr);
