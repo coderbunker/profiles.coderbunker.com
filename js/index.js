@@ -49,8 +49,6 @@ function searchIt() {
         bool: "AND"
     });
 
-    console.log(matchArr.length);
-
     const allUsersArray = matchArr.map( match => {
         return {
           name: match.doc.fullname,
