@@ -1,3 +1,6 @@
 #Ignore list for the coderbunker member search page.
 
 config.json
+node_modules
+**/.DS_Store
+**/.vscode
