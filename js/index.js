@@ -39,10 +39,10 @@ inputArea.addEventListener("keyup", function(e) {
 function searchIt() {
     $('.searchResult').remove();
     let htmlText = '';
-    let individualUser = {
-        'name': '',
-        'profile': '',
-    };
+    // let allUsersArray = {
+    //     'name': '',
+    //     // 'profile': '',
+    // };
 
     const searchStr = inputArea.value;
     const matchArr = index.search(searchStr);
@@ -50,9 +50,14 @@ function searchIt() {
     const allUsersArray = matchArr.map( match => {
         return {
           name: match.doc.fullname,
-          profile: match.doc.profileUrl
+          profile: match.doc.profileUrl,
+          github: match.doc.github,
+          linkedin: match.doc.linkedin,
+          wechat: match.doc.wechat,
+          rate: match.doc.rate
         }
       })
+      console.log(allUsersArray)
 
     if (allUsersArray.length == 0) {
         htmlText += '<div class="searchResult">';
@@ -61,10 +66,13 @@ function searchIt() {
     } else {
         for ( var key in allUsersArray ) {
                 htmlText += '<div class="searchResult">';
-                htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
-                htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
+                    htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
+                    htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
+                    htmlText += '<p class="profileGitHub"> <a href="https://github.com/' + allUsersArray[key].github + '"> GitHub </a> </p>';
+                    htmlText += '<p class="profileLinkedIn"> <a href="' + allUsersArray[key].linkedin + '"> LinkedIn </a> </p>';
+                    htmlText += '<p class="profileWechat"> WeChat ID: ' + allUsersArray[key].wechat + '</p>';
+                    htmlText += '<p class="profileRate"> Rate: ' + allUsersArray[key].rate + '</p>';
                 htmlText += '</div>';
-            
         }
     }
 
