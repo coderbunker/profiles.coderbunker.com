@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
+    <meta name="google-signin-client_id" content="799952805488-uifv6couh0uv5a74o8g99d68v9vvobqf.apps.googleusercontent.com">
+    <link rel="stylesheet" href="app.css">
     <title>Coderbunker</title>
 </head>
 <body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="search-section">
         <div class="search-area">
             <h2>Coderbunker Members Search</h2>
@@ -19,6 +21,7 @@
     <script src="libs/elasticlunr.min.js"></script>
     <script type="text/javascript" src="config.json"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="app.js"></script>
 </body>
 </html>

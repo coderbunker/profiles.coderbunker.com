@@ -1,0 +1,21 @@
+{
+  "name": "profiles.coderbunker.com",
+  "version": "0.0.1",
+  "main": "app.js",
+  "repository": "git@github.com:coderbunker/profiles.coderbunker.com.git",
+  "author": "ortonomy <git@ortonomy.co>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "nodemon": "^1.18.5"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node app.js"
+  }
+}

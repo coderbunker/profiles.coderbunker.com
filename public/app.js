@@ -70,3 +70,8 @@ function searchIt() {
 
         $(".search-results-area").append(htmlText);   
 }
+
+const onSignIn = googleUser => {
+  console.log(googleUser);
+  const authToken = googleUser.getAuthResponse().id_token
+}
