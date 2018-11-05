@@ -68,10 +68,18 @@ function searchIt() {
                 htmlText += '<div class="searchResult">';
                     htmlText += '<p class="profileName"> ' + allUsersArray[key].name + '</p>';
                     htmlText += '<img class="profileImg" src="' + allUsersArray[key].profile + '">';
-                    htmlText += '<p class="profileGitHub"> <a href="https://github.com/' + allUsersArray[key].github + '"> GitHub </a> </p>';
-                    htmlText += '<p class="profileLinkedIn"> <a href="' + allUsersArray[key].linkedin + '"> LinkedIn </a> </p>';
-                    htmlText += '<p class="profileWechat"> WeChat ID: ' + allUsersArray[key].wechat + '</p>';
-                    htmlText += '<p class="profileRate"> Rate: ' + allUsersArray[key].rate + '</p>';
+                    if (allUsersArray[key].github) {
+                        htmlText += '<p class="profileGitHub"> <a href="https://github.com/' + allUsersArray[key].github + '"> GitHub </a> </p>';
+                    }
+                    if (allUsersArray[key].linkedin) {
+                        htmlText += '<p class="profileLinkedIn"> <a href="' + allUsersArray[key].linkedin + '"> LinkedIn </a> </p>';
+                    }
+                    if (allUsersArray[key].wechat) {
+                        htmlText += '<p class="profileWechat"> WeChat ID: ' + allUsersArray[key].wechat + '</p>';
+                    }
+                    if (allUsersArray[key].rate) {
+                        htmlText += '<p class="profileRate"> Rate: ' + allUsersArray[key].rate + '</p>';
+                    }
                 htmlText += '</div>';
         }
     }
