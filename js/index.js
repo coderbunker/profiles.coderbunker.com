@@ -45,7 +45,11 @@ function searchIt() {
     };
 
     const searchStr = inputArea.value;
-    const matchArr = index.search(searchStr);
+    const matchArr = index.search(searchStr, {
+        bool: "AND"
+    });
+
+    console.log(matchArr.length);
 
     const allUsersArray = matchArr.map( match => {
         return {
